@@ -1,0 +1,49 @@
+<div class="jumbotron">
+    <h1>Welcome to <span class="zf-green">Zend Framework</span></h1>
+
+    <p>
+        Congratulations! You have successfully installed the
+        <a href="https://github.com/zendframework/ZendSkeletonApplication" target="_blank">ZF Skeleton Application</a>.
+        You are currently running Zend Framework version <?= \Application\Module::VERSION ?>.
+        This skeleton can serve as a simple starting point for you to begin
+        building your application on ZF.
+    </p>
+
+    <p><a class="btn btn-success btn-lg" href="https://github.com/zendframework/zendframework" target="_blank">Fork Zend
+            Framework on GitHub &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <a href="/nova-noticia" class="btn btn-primary rounded-0 mb-3">
+            Nova notícia
+        </a>
+    </div>
+</div>
+
+<div class="row">
+
+    <?php foreach ($posts as $post) : ?>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title"><?= $post['title'] ?></h2>
+                <small><?= $post['name'] ?></small>
+            </div>
+            <div class="card-body">
+                <p>
+                    <?= $post['description'] ?>
+                </p>
+
+                <p><a class="btn btn-success pull-right" href="/ver-noticia/<?= $post['id'] ?>">Ver
+                        notícia &raquo;</a>
+                    <a class="btn btn-success pull-right" href="/editar-noticia/<?= $post['id'] ?>">Editar
+                        notícia &raquo;</a>
+                    <a class="btn btn-danger pull-right" href="/excluir-noticia/<?= $post['id'] ?>">Excluir</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php endforeach ?>
+
+</div>

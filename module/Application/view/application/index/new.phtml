@@ -1,0 +1,21 @@
+<form action="/nova-noticia" method="POST" class="row">
+    <div class="col-12">
+        <label for="description">Descrição</label>
+        <textarea class="form-control" required name="description" id="description" rows="6"></textarea>
+    </div>
+    <div class="col-6">
+        <label for="title">Título</label>
+        <input type="text" required class="form-control" name="title" id="title">
+    </div>
+    <div class="col-6 mb-3">
+        <label for="category_id">Categoria</label>
+        <select name="category_id" required class="form-control" id="category_id">
+            <?php foreach ($categories as $category) : ?>
+            <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+            <?php endforeach ?>
+        </select>
+    </div>
+    <div class="col-12">
+        <input type="submit" value="Enviar" class="btn btn-primary rounded-0">
+    </div>
+</form>
